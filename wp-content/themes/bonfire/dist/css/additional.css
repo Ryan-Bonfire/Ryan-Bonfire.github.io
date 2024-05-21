@@ -1,0 +1,135 @@
+a {
+    color: white;
+}
+.header-main nav ul > li:not(.is-active):not(.has-phone) a svg {
+	opacity: 0;
+}
+
+.gform_validation_container {
+	visibility: hidden !important;
+	opacity: 0 !important;
+	position: absolute !important;
+}
+
+#gform_wrapper_18 {
+	max-width: 800px;
+}
+
+#gform_wrapper_18 li:before {
+	content: unset;
+}
+
+
+#gform_wrapper_18 li.gfield {
+	display: grid;
+	grid-template-columns: 180px minmax(0, 1fr);
+	grid-column-gap: 2em;
+	list-style: none;
+}
+#gform_wrapper_18 li.gfield,
+#gform_wrapper_18 li.gfield .gfield_label {
+	position: static;
+	padding: 0;
+	width: auto;
+	margin: 0;
+}
+#gform_wrapper_18 li.gfield + li.gfield {
+	margin-top: 1em;
+}
+
+#gform_wrapper_18 li.gfield .ginput_container {
+	flex: 1;
+}
+
+#gform_wrapper_18 li.gfield .gfield_description {
+	grid-column: 2;
+	opacity: 0.75;
+}
+#gform_wrapper_18 li.gfield input,
+#gform_wrapper_18 li.gfield select,
+#gform_wrapper_18 li.gfield textarea {
+	padding: 1em;
+	font-size: 1em;
+	line-height: initial;
+}
+
+#gform_wrapper_18 .bubble {
+	grid-column: 1 / 3;
+	padding: 3em 0 1em;
+	text-align: center;
+}
+
+#gform_wrapper_18 .ginput_container_website input[aria-invalid="true"] {
+	border: 1px solid #e00404;
+}
+
+#gform_wrapper_18 .gform_page_fields {
+	margin: 2em 0;
+}
+#gform_wrapper_18 .gf_page_steps {
+	font-size: 2em;
+	font-weight: 300;
+}
+#gform_wrapper_18 .gf_step_number {
+	width: 1.5em;
+	height: 1.5em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	border-radius: 50%;
+	background-color: rgba(255,255,255,0.1);
+}
+#gform_wrapper_18 .gf_step.gf_step_active {
+	color: #f1e82b;
+	font-weight: bold;
+}
+#gform_wrapper_18 .gf_step.gf_step_active .gf_step_number {
+	background-color: #f1e82b;
+	color: #111;
+}
+
+#gform_wrapper_18 .gf_step + .gf_step {
+	margin-top: 0.5em;
+}
+
+
+#gform_wrapper_18 li.gfield.gfield_html {
+	display: block;
+	width: 100%;
+}
+
+#gform_wrapper_18 li.gfield.gfield_html img {
+	padding-bottom: 2em;
+}
+
+#gform_wrapper_18 .gform_page_footer {
+	text-align: right;
+	display: flex;
+}
+
+#gform_wrapper_18 .gform_page_footer input.button {
+	appearance: none;
+	border: none;
+	padding: 1em;
+	background: #f1e82b;
+	color: #111;
+	cursor: pointer;
+	font-weight: 800;
+	width: 100%;
+}
+#gform_wrapper_18 .gform_page_footer input.button + input.button {
+	margin-left: 0.5em;
+}
+
+#gform_wrapper_18 .gform_page_footer input.button:hover {
+	opacity: 0.75;
+}
+#gform_wrapper_18 img.gform_ajax_spinner {
+	display: none !important;
+}
+
+#gform_wrapper_18 .gform_page_footer input.gform_previous_button {
+	background-color: rgba(255,255,255,0.2);
+	color: rgba(255, 255, 255, .85);
+}
