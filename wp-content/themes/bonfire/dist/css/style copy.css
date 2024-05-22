@@ -299,7 +299,21 @@ nav ul li {
   background-position: center 35%;
 }
 
+@font-face {
+  font-family: 'Maison Neue';
+  src: url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Book.woff2") format("woff2"), url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
 
+@font-face {
+  font-family: 'Maison Neue';
+  src: url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Book.woff2") format("woff2"), url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+}
 
 /*
 @font-face {
@@ -313,7 +327,21 @@ nav ul li {
 	font-stretch: normal;
 }
 */
+@font-face {
+  font-family: 'Maison Neue';
+  src: url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Bold.woff2") format("woff2"), url("/wp-content/themes/bonfire/dist/css/_fonts/_maison-neue/MaisonNeue-Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
 
+@font-face {
+  font-family: 'Mark Pro';
+  src: url("/wp-content/themes/bonfire/dist/css/_fonts/_mark/heavy.woff2") format("woff2"), url("/wp-content/themes/bonfire/dist/css/_fonts/_mark/heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}
 
 html {
   font-size: 62.5%;
