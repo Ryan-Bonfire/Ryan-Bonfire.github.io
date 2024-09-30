@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Reassignment</title>
+
+         <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/abstract-peach-purple-background-with-wavy-lines_1332213-4080.jpg?size=626&ext=jpg&ga=GA1.2.2074968755.1725252969&semt=ais_hybrid');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        .container {
+            display: none;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            flex-direction: column;
+        }
+        .rotate {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .options {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .checkbox-container {
+            text-align: left;
+            margin: 0 auto;
+            width: 200px;
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            border: 2px solid #ffcc00;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        input[type="checkbox"]:checked::before {
+            content: '✔';
+            color: #ffcc00;
+            position: absolute;
+            top: -2px;
+            left: 3px;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #222;
+            border-color: #ffcc00;
+        }
+        @media only screen and (max-width: 600px) {
+            .button {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+            .options {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+        /* Final screen styling */
+        #success {
+            background-color: #cdfaa2;
+            padding: 50px;
+            border-radius: 10px;
+            color: black;
+            /*margin: -50px;
+             height: 2000px; */
+        }
+        #relax-img {
+            margin-top: 20px;
+            margin-left: -30px;
+        }
+        #relax-text {
+            font-size: 24px;
+            margin-top: 20px;
+            color: black;
+        }
+        .panda {
+          animation:brath 8s  linear infinite;
+}
+@keyframes brath{
+		0%{transform: scale(.9);}
+		25%{transform: scale(1);}
+		60%{transform: scale(.9);}
+		100%{transform: scale(1);}
+	}
+    </style>
+
+<style>
+    .outerring {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 5px solid #47dbdb;
+}
+
+.innerring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 2px);
+    height: calc(100% - 3px);
+    border-radius: 100%;
+    border: 5px solid #2255cb;
+    animation: breathe 4s linear infinite;
+}
+
+.mycontainer {
+    position: relative;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+@keyframes breathe {
+    0% {
+        box-shadow: 0;
+    }
+    25% {
+        box-shadow: inset 0 0 20px 5px #2255cb;
+    }
+    50% {
+        box-shadow: inset 0 0 120px 5px #2255cb;
+    }
+    75% {
+        box-shadow: inset 0 0 20px 5px #2255cb;
+    }
+    100% {
+        box-shadow: 0;
+    }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Step 1 -->
+    <div id="step1" class="container" style="display: block;">
+        <h2>Happy Birthday Erica!</h2>
+        <h2>Click this button to activate Birthday present</h2>
+        <!-- <button class="button" onclick="nextStep('step1.1')">Activate</button> -->
+        <button class="button" onclick="confetti(); setTimeout(function() { nextStep('step1.1'); }, 3000);">Activate</button>
+
+
+    </div>
+
+    <!-- Step 1.1 -->
+<div id="step1.1" class="container">
+    <h2>A birthday is not just the passage of time, but a reminder to pause, reflect, and embrace life's joys.</h2>
+    <button class="button" onclick="nextStep('step1.2')">Next</button>
+</div>
+
+<!-- Step 1.2 -->
+<div id="step1.2" class="container">
+    <h2>In celebrating ourselves, we allow space for relaxation and gratitude, freeing us from the weight of everyday stress.</h2>
+    <button class="button" onclick="nextStep('step1.3')">Next</button>
+</div>
+
+<!-- Step 1.3 -->
+<div id="step1.3" class="container">
+    <h2>While stress often comes from feeling overwhelmed by tasks, birthdays, like other important dates, offer an opportunity to pause, reflect, and make meaningful changes.</h2>
+    <button class="button" onclick="nextStep('step1.4')">Next</button>
+</div>
+
+<!-- Step 1.4 -->
+<div id="step1.4" class="container">
+    <h2>Would you like to make a change today?</h2>
+    <button class="button" onclick="nextStep('step1.5')">Yes</button>
+    <button class="button" onclick="reset()">No</button>
+</div>
+
+<!-- Step 1.5 -->
+<div id="step1.5" class="container">
+    <h2>Take a moment to breathe.</h2>
+    <div class="mycontainer">
+        <div class="outerring">
+            <div class="innerring">
+            </div>
+        </div>
+    </div>
+    <button class="button" onclick="nextStep('step1.6')">Done</button>
+</div>
+
+<!-- Step 1.6 -->
+<div id="step1.6" class="container">
+    <h2>Stress oftentimes stems from task overwhelm.</h2>
+    <h2>Do you want to reassign some tasks?</h2>
+    <button class="button" onclick="showModal('modal1')">Yes</button>
+    <button class="button" onclick="reset()">No</button>
+</div>
+
+
+    <!-- Modal for step 2 -->
+    <div id="modal1" class="modal">
+        <div>Downloading tasks...</div>
+        <div class="rotate"></div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="container">
+        <h2>Click this button to reassign tasks</h2>
+        <button class="button" onclick="showModal('modal2')">Reassign Tasks</button>
+    </div>
+
+    <!-- Modal for step 4 -->
+    <div id="modal2" class="modal">
+        <div>Organising tasks...</div>
+        <div class="rotate"></div>
+    </div>
+
+    <!-- Step 5 -->
+    <div id="step5" class="container">
+        <h2>Who would you like to reassign tasks to?</h2>
+        <div class="options">
+            <button class="button" onclick="nextStep('step6')">Ryan</button>
+            <button class="button" onclick="nextStep('step6')">Ryan</button>
+            <button class="button" onclick="nextStep('step6')">Ryan</button>
+        </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div id="step6" class="container">
+        <h2>Pick which tasks to reassign:</h2>
+        <div class="checkbox-container">
+            <label><input type="checkbox" id="grocery" value="Grocery Ordering"> Grocery Ordering</label><br>
+            <label><input type="checkbox" id="laundry" value="Laundry"> Laundry</label><br>
+            <label><input type="checkbox" id="lunches" value="Lunches"> Lunches</label><br>
+            <label><input type="checkbox" id="all" value="All of the above"> All of the above</label><br>
+        </div>
+        <!-- <button class="button" onclick="confirmReassignment()">Next</button> -->
+        <button class="button" onclick="nextStep('step7')">Next</button>
+    </div>
+
+    <!-- Step 7 -->
+    <div id="step7" class="container">
+        <h2>All tasks will be permanently reassigned, do you wish to continue?</h2>
+        <!-- <button class="button" onclick="showModal('modal3')">Yes</button> -->
+        <button class="button" onclick="confirmReassignment(); showModal('modal3')">Yes</button> <!-- Added confirmReassignment() here -->
+        <button class="button" onclick="reset()">No</button>
+    </div>
+
+    <!-- Final Modal -->
+    <div id="modal3" class="modal">
+        <div id="modal3-message">Reducing stress...</div>
+        <div class="rotate"></div>
+    </div>
+
+    <!-- Final Success -->
+    <div id="success" class="container">
+        <h2>Complete!</h2> 
+        <h2>All tasks are now Ryan's responsibility.</h2>
+        <p>Below is a list of the tasks you have just reassigned:</p>
+        <div id="task-summary"></div>
+        <div id="relax-text">Now relax...</div>
+        <div class="panda"><img id="relax-img" src="https://i.pinimg.com/736x/2c/d7/14/2cd714bf58509d8b8d12c69cbc6d9e87.jpg" alt="Relaxing" width="250"></div>
+    </div>
+
+    <script>
+        let selectedTasks = [];
+
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            if (modalId === 'modal3') {
+                // Show first message for 2.5 seconds, then switch to second message
+                document.getElementById('modal3-message').innerHTML = 'Reducing stress...';
+                setTimeout(function() {
+                    document.getElementById('modal3-message').innerHTML = 'Realigning zen...';
+                }, 2500);
+                // Hide modal and show success after 5 seconds
+                setTimeout(function() {
+                    document.getElementById(modalId).style.display = 'none';
+                    showFinalMessage();
+                }, 5000);
+            } else {
+                // Hide modal after 3 seconds
+                setTimeout(function() {
+                    document.getElementById(modalId).style.display = 'none';
+                    nextStep(modalId === 'modal1' ? 'step3' : 'step5');
+                }, 3000);
+            }
+        }
+
+        function nextStep(nextId) {
+            let containers = document.querySelectorAll('.container');
+            containers.forEach(container => container.style.display = 'none');
+            document.getElementById(nextId).style.display = 'block';
+        }
+
+        function confirmReassignment() {
+            selectedTasks = [];
+            if (document.getElementById('grocery').checked) selectedTasks.push('Grocery Ordering');
+            if (document.getElementById('laundry').checked) selectedTasks.push('Laundry');
+            if (document.getElementById('lunches').checked) selectedTasks.push('Lunches');
+            if (document.getElementById('all').checked) selectedTasks = ['Grocery Ordering', 'Laundry', 'Lunches'];
+
+            nextStep('step7');
+            generateTxtFile(selectedTasks);
+        }
+
+        function reset() {
+            window.location.reload();
+        }
+
+        function showFinalMessage() {
+            // Display final success message and the list of tasks
+            const taskSummary = selectedTasks.length > 0 ? selectedTasks.join(', ') : 'No tasks selected';
+            document.getElementById('task-summary').innerHTML = taskSummary;
+            nextStep('success');
+        }
+
+        function generateTxtFile(tasks) {
+            const blob = new Blob([tasks.join(', ')], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'selected_tasks.txt';
+            link.click();
+        }
+    </script>
+   
+</body>
+</html>
